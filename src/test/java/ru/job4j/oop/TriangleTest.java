@@ -26,4 +26,5 @@ public class TriangleTest {
         double expected = -1;
         assertThat(result).isCloseTo(expected, offset(0.001));
     }
+
 }
