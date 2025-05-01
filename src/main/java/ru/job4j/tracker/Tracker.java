@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-import ru.job4j.Item;
+import ru.job4j.oop.Item;
 
 public class Tracker {
     private final Item[] items = new Item[100];
