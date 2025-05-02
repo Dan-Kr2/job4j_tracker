@@ -4,7 +4,6 @@ public class Calculator {
 
     private static int x = 5;
 
-
     public double add(double first, double second) {
         return first + second;
     }
