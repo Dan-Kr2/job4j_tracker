@@ -13,7 +13,7 @@ public class Tracker {
         return item;
     }
 
-    public Item[] findAll( ) {
+    public Item[] findAll() {
         Item[] clone = new Item[items.length];
         int j = 0;
         for (int i = 0; i < items.length; i++) {
@@ -35,7 +35,6 @@ public class Tracker {
             }
         } return Arrays.copyOf(clone, j);
     }
-
 
     public Item findById(int id) {
         Item rsl = null;
