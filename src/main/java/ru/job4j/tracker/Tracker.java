@@ -33,7 +33,8 @@ public class Tracker {
                 clone[j] = items[i];
                 j++;
             }
-        } return Arrays.copyOf(clone, j);
+        }
+        return Arrays.copyOf(clone, j);
     }
 
     private int indexOf(int id) {
@@ -60,5 +61,20 @@ public class Tracker {
         item.setId(id);
         items[i] = item;
         return true;
+    }
+
+    public void delete(int id) {
+        int index = indexOf(id);
+        if (index == -1) {
+            return;
+        }
+        int start = index + 1;
+        int fin = size - index - 1;
+
+        if (fin > 0) {
+            System.arraycopy(items, start, items, index, fin);
+        }
+        items[size - 1] = null;
+        size--;
     }
 }
