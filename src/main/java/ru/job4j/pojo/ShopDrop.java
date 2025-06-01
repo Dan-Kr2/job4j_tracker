@@ -4,9 +4,8 @@ public class ShopDrop {
 
     public static Product[] delete(Product[] products, int index) {
         products[index] = null;
-        while (index + 1 < products.length) {
-            products[index] = products[index + 1];
-            index++;
+        for (int i = index; i + 1 < products.length; i++) {
+            products[i] = products[i + 1];
         }
         products[products.length - 1] = null;
         return products;
