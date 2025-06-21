@@ -23,25 +23,9 @@ public class StartUI {
             } else if (select == 3) {
                 deteleItem(input, tracker);
             } else if (select == 4) {
-                System.out.println("=== Вывод заявки по id ===");
-                int id = input.askInt("Введите id: ");
-                Item item = tracker.findById(id);
-                if (item != null) {
-                    System.out.println(item);
-                } else {
-                    System.out.println("Заявка с введенным id: " + id + " не найдена.");
-                }
+                findItemById(input, tracker);
             } else if (select == 5) {
-                System.out.println("=== Вывод заявок по имени ===");
-                String name = input.askStr("Введите имя: ");
-                Item[] items = tracker.findByName(name);
-                if (items.length > 0) {
-                    for (Item item : items) {
-                        System.out.println(item);
-                    }
-                } else {
-                    System.out.println("Заявки с именем: " + name + " не найдены.");
-                }
+                findItemsByName(input, tracker);
             } else if (select == 6) {
                 run = false;
             }
@@ -67,6 +51,30 @@ public class StartUI {
             System.out.println("Ошибка замены заявки.");
         }
     }
+
+        public static void findItemById(Input input, Tracker tracker) {
+            System.out.println("=== Вывод заявки по id ===");
+            int id = input.askInt("Введите id: ");
+            Item item = tracker.findById(id);
+            if (item != null) {
+                System.out.println(item);
+            } else {
+                System.out.println("Заявка с введенным id: " + id + " не найдена.");
+            }
+        }
+
+        public static void findItemsByName(Input input, Tracker tracker) {
+            System.out.println("=== Вывод заявок по имени ===");
+            String name = input.askStr("Введите имя: ");
+            Item[] items = tracker.findByName(name);
+            if (items.length > 0) {
+                for (Item item : items) {
+                    System.out.println(item);
+                }
+            } else {
+                System.out.println("Заявки с именем: " + name + " не найдены.");
+            }
+        }
 
     public static void deteleItem(Input input, Tracker tracker) {
         System.out.println("=== Удаление заявки ===");
