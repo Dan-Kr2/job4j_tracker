@@ -1,5 +1,7 @@
 package ru.job4j.pojo;
 
+import ru.job4j.oop.Freshman;
+
 import java.util.Date;
 
 public class College {
