@@ -93,5 +93,4 @@ public class StartUI {
         Tracker tracker = new Tracker();
         new StartUI().init(input, tracker);
     }
-
 }
