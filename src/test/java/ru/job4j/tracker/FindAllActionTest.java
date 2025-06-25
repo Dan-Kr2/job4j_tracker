@@ -14,7 +14,7 @@ class FindAllActionTest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Test"));
         new FindAllAction(output).execute(null, tracker);
-        String expected = "=== Вывод всех заявок ===" + System.lineSeparator() + item.toString();
+        String expected = "=== Вывод всех заявок ===" + System.lineSeparator() + item.toString() + System.lineSeparator();
         assertThat(output.toString()).isEqualTo(expected);
     }
 
@@ -22,7 +22,7 @@ class FindAllActionTest {
     void whenNoItemsThenShowEmptyMessage() {
         Output output = new StubOutput();
         new FindAllAction(output).execute(null, new Tracker());
-        String expected = "=== Вывод всех заявок ===" + System.lineSeparator() + "Хранилище еще не содержит заявок";
+        String expected = "=== Вывод всех заявок ===" + System.lineSeparator() + "Хранилище еще не содержит заявок" + System.lineSeparator();
         assertThat(output.toString()).isEqualTo(expected);
     }
 }
