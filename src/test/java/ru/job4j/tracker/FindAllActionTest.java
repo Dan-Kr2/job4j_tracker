@@ -14,13 +14,15 @@ class FindAllActionTest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Test"));
         new FindAllAction(output).execute(null, tracker);
-        assertThat(output.toString()).contains("=== Вывод всех заявок ===", item.toString());
+        String expected = "=== Вывод всех заявок ===" + System.lineSeparator() + item.toString();
+        assertThat(output.toString()).isEqualTo(expected);
     }
 
     @Test
     void whenNoItemsThenShowEmptyMessage() {
         Output output = new StubOutput();
         new FindAllAction(output).execute(null, new Tracker());
-        assertThat(output.toString()).contains("Хранилище еще не содержит заявок");
+        String expected = "=== Вывод всех заявок ===" + System.lineSeparator() + "Хранилище еще не содержит заявок";
+        assertThat(output.toString()).isEqualTo(expected);
     }
 }

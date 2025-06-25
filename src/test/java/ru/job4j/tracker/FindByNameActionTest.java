@@ -15,13 +15,15 @@ class FindByNameActionTest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Test"));
         new FindByNameAction(output).execute(new MockInput(new String[]{"Test"}), tracker);
-        assertThat(output.toString()).contains("=== Вывод заявок по имени ===", item.toString());
+        String expected = "=== Вывод заявок по имени ===" + System.lineSeparator() + item.toString();
+        assertThat(output.toString()).isEqualTo(expected);
     }
 
     @Test
     void whenItemNotFoundThenShowMessage() {
         Output output = new StubOutput();
         new FindByNameAction(output).execute(new MockInput(new String[]{"Unknown"}), new Tracker());
-        assertThat(output.toString()).contains("Заявки с именем: Unknown не найдены.");
+        String expected = "=== Вывод заявок по имени ===" + System.lineSeparator() + "Заявки с именем: Unknown не найдены.";
+        assertThat(output.toString()).isEqualTo(expected);
     }
 }
