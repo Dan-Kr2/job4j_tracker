@@ -15,7 +15,7 @@ class FindByIdActionTest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Test"));
         new FindByIdAction(output).execute(new MockInput(new String[]{String.valueOf(item.getId())}), tracker);
-        String expected = "=== Вывод заявки по id ===" + System.lineSeparator() + item.toString();
+        String expected = "=== Вывод заявки по id ===" + System.lineSeparator() + "Введите id: " + System.lineSeparator() + item.toString();
         assertThat(output.toString()).isEqualTo(expected);
     }
 
@@ -23,7 +23,7 @@ class FindByIdActionTest {
     void whenItemNotFoundThenShowMessage() {
         Output output = new StubOutput();
         new FindByIdAction(output).execute(new MockInput(new String[]{"999"}), new Tracker());
-        String expected = "=== Вывод заявки по id ===" + System.lineSeparator() + "Заявка с введенным id: 999 не найдена.";
+        String expected = "=== Вывод заявки по id ===" + System.lineSeparator() + "Введите id: " + System.lineSeparator() + "Заявка с введенным id: 999 не найдена.";
         assertThat(output.toString()).isEqualTo(expected);
     }
 }
