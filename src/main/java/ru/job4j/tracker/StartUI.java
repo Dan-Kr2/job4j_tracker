@@ -1,10 +1,10 @@
 package ru.job4j.tracker;
 
-import ru.job4j.action.*;
-import ru.job4j.input.ConsoleInput;
-import ru.job4j.input.Input;
-import ru.job4j.input.output.ConsoleOutput;
-import ru.job4j.input.output.Output;
+import ru.job4j.tracker.action.*;
+import ru.job4j.tracker.input.ConsoleInput;
+import ru.job4j.tracker.input.Input;
+import ru.job4j.tracker.output.ConsoleOutput;
+import ru.job4j.tracker.output.Output;
 
 public class StartUI {
     private final Output output;
