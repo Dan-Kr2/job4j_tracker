@@ -1,4 +1,4 @@
-package ru.job4j.output;
+package ru.job4j.input.output;
 
 public class ConsoleOutput implements Output {
     @Override

@@ -1,7 +1,7 @@
 package ru.job4j.action;
 
 import ru.job4j.input.Input;
-import ru.job4j.output.Output;
+import ru.job4j.input.output.Output;
 import ru.job4j.tracker.Tracker;
 
 public class ExitAction implements UserAction {
