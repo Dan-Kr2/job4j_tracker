@@ -16,4 +16,11 @@ class FactorialTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("Number must be non-negative");
     }
+
+    @Test
+    public void whenCalculateFactorialFor5Then120() {
+        int expected = 120;
+        int actual = Factorial.calc(5);
+        assertThat(actual).isEqualTo(expected);
+    }
 }
