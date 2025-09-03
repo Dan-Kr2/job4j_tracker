@@ -1,0 +1,5 @@
+package ru.job4j.bank;
+
+public class test {
+    int a;
+}
