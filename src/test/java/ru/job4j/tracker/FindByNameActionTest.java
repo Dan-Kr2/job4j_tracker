@@ -27,3 +27,4 @@ class FindByNameActionTest {
         assertThat(output.toString()).isEqualTo(expected);
     }
 }
+
