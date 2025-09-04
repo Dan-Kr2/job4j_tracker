@@ -15,7 +15,7 @@ class FindByNameActionTest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Test"));
         new FindByNameAction(output).execute(new MockInput(new String[]{"Test"}), tracker);
-        String expected = "=== Вывод заявок по имени ===" + System.lineSeparator() + item.toString() + System.lineSeparator();
+        String expected = "=== Вывод заявок по имени ===" + System.lineSeparator() + item + System.lineSeparator();
         assertThat(output.toString()).isEqualTo(expected);
     }
 
