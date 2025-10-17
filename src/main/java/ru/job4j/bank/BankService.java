@@ -8,6 +8,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * BankService - класс для управления банковскими операциями
+ * Функционал:
+ * - добавлять/удалять пользователей
+ * -искать счета по паспорту/реквизитам
+ * - управлять счетами
+ * - выполнять переводы между счетами
+ *
+ * @author Дан
+ * @since 2024
+ */
+
 public class BankService {
     private final Map<User, List<Account>> users = new HashMap<>();
 
@@ -49,6 +61,11 @@ public class BankService {
         }
         return null;
     }
+
+    /**
+     * Выполняет перевод денежных средств между счетами пользователей
+     *
+     */
 
     public boolean transferMoney(String sourcePassport, String sourceRequisite,
                                  String destinationPassport, String destinationRequisite,

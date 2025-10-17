@@ -2,6 +2,14 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Модель пользователя банковской системы
+ * Уникальность пользователя определяется по паспорту
+ *
+ * @author Дан
+ * @since 2024
+ */
+
 public class User {
     private String passport;
     private String username;
