@@ -17,4 +17,9 @@ public class Card {
                         .map(value -> new Card(suit, value)))
                 .forEach(System.out::println);
     }
+
+    @Override
+    public String toString() {
+       return "Suit=" + suit + ", Value=" + value;
+    }
 }
