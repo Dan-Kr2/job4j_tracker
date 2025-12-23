@@ -10,10 +10,11 @@ public class DepartmentsDescComparator implements Comparator<String> {
         String[] a = left.split("/");
         String[] b = right.split("/");
         int r = min(a.length, b.length);
+        int h = 0;
         for (int i = 0; i < r; i++) {
             int s = a[i].compareTo(b[i]);
-            if (s != 0) {
-                return -s;
+            if (h == 0 && s != 0) {
+                return (i == 0) ? -s : s;
             }
         }
         if (a.length != b.length) {
