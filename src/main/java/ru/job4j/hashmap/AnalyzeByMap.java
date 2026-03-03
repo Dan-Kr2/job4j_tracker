@@ -35,22 +35,21 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
-        List<Label> result = new ArrayList<>();
-        Map<String, int[]> subjectData = new HashMap<>();
+        Map<String, Double> subjectSums = new HashMap<>();
+        int pupilsCount = pupils.size();
+
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
                 String subjectName = subject.name();
-                int score = subject.score();
-                int[] data = subjectData.computeIfAbsent(subjectName, k -> new int[2]);
-                data[0] += score;
-                data[1]++;
+                double score = subject.score();
+                subjectSums.put(subjectName, subjectSums.getOrDefault(subjectName, 0.0) + score);
             }
         }
-        for (Map.Entry<String, int[]> entry : subjectData.entrySet()) {
-            String subjectName = entry.getKey();
-            int[] data = entry.getValue();
-            double average = data[0] / data[1];
-            result.add(new Label(subjectName, average));
+
+        List<Label> result = new ArrayList<>();
+        for (Map.Entry<String, Double> entry : subjectSums.entrySet()) {
+            double average = entry.getValue() / pupilsCount;
+            result.add(new Label(entry.getKey(), average));
         }
         return result;
     }
